@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="日常," />
 
 
 
@@ -92,7 +92,7 @@ github官方回复
 
 We recently updated to Jekyll v3.3, which ignores the vendor folder by default.If you’re not using Jekyll, you can add a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tom的书房">
+<meta property="og:title" content="Hexo Next主题界面空白 vendors下资源不加载办法">
 <meta property="og:url" content="http://yoursite.com/2016/11/09/hexo_next/index.html">
 <meta property="og:site_name" content="Tom的书房">
 <meta property="og:description" content="Next作者的回复是
@@ -102,9 +102,9 @@ vendors目录被guthub pages屏蔽，将vendors改成其他名字即可，主题
 github官方回复
 
 We recently updated to Jekyll v3.3, which ignores the vendor folder by default.If you’re not using Jekyll, you can add a">
-<meta property="og:updated_time" content="2016-11-09T08:47:03.000Z">
+<meta property="og:updated_time" content="2016-11-09T10:51:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tom的书房">
+<meta name="twitter:title" content="Hexo Next主题界面空白 vendors下资源不加载办法">
 <meta name="twitter:description" content="Next作者的回复是
 
 vendors目录被guthub pages屏蔽，将vendors改成其他名字即可，主题配置文件里面也需要改
@@ -135,7 +135,7 @@ We recently updated to Jekyll v3.3, which ignores the vendor folder by default.I
   <link rel="canonical" href="http://yoursite.com/2016/11/09/hexo_next/"/>
 
 
-  <title>  | Tom的书房 </title>
+  <title> Hexo Next主题界面空白 vendors下资源不加载办法 | Tom的书房 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -295,7 +295,7 @@ We recently updated to Jekyll v3.3, which ignores the vendor folder by default.I
             
             
               
-                
+                Hexo Next主题界面空白 vendors下资源不加载办法
               
             
           </h1>
@@ -307,11 +307,30 @@ We recently updated to Jekyll v3.3, which ignores the vendor folder by default.I
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-09T16:46:59+08:00" content="2016-11-09">
+            <time itemprop="dateCreated" datetime="2016-11-09T18:49:51+08:00" content="2016-11-09">
               2016-11-09
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/bugs/" itemprop="url" rel="index">
+                    <span itemprop="name">bugs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -355,7 +374,10 @@ We recently updated to Jekyll v3.3, which ignores the vendor folder by default.I
 <blockquote>
 <p>We recently updated to Jekyll v3.3, which ignores the vendor folder by default.If you’re not using Jekyll, you can add a .nojekyll file to the root of your repository to disable Jekyll from building your site.</p>
 </blockquote>
-<p>直接登陆github，在仓库上新建文件.nojekyll。</p>
+<p>简单的办法：<br>直接登陆github，在仓库上新建文件.nojekyll但是每次重新执行hexo clean/g/d之后文件会被删除。直接在本地hexo的public或者source目录新建文件总是没办法提交成功。（点开头的文件不提交？）<br>麻烦的办法：<br>自己去查找themes／next的源码。把相关的vendors内容改掉。<br>我把source文件夹下vendors改成了vendor。对原理不是很理解，只能用笨办法，查找替换掉文件中出现的vendors目录没写全自行查找吧</p>
+<blockquote>
+<p>source/vendor<br>_script/vendor.swig<br>_partials/head.swig<br>layout/index.swig<br>third-party/comments/duoshuo.swig<br>还有主题配置文件_config.yml</p>
+</blockquote>
 
       
     </div>
@@ -397,6 +419,12 @@ We recently updated to Jekyll v3.3, which ignores the vendor folder by default.I
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/日常/" rel="tag">#日常</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
@@ -435,7 +463,7 @@ We recently updated to Jekyll v3.3, which ignores the vendor folder by default.I
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/11/09/hexo_next/"
-           data-title="" data-url="http://yoursite.com/2016/11/09/hexo_next/">
+           data-title="Hexo Next主题界面空白 vendors下资源不加载办法" data-url="http://yoursite.com/2016/11/09/hexo_next/">
       </div>
     
   </div>
