@@ -101,7 +101,7 @@
 
 1max_connect_">
 <meta property="og:image" content="http://unize4.github.io/upload/blocked.png">
-<meta property="og:updated_time" content="2016-11-10T04:12:22.000Z">
+<meta property="og:updated_time" content="2016-11-10T14:56:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql：is blocked because of many connection errors">
 <meta name="twitter:description" content="是由于MYSQL数据库的参数：max_connect_errors（系统默认10）  mysqld已经得到了大量(max_connect_errors)的主机’hostname’的在中途被中断了的连接请求累计超过10次，就再也无法连接上mysqld服务，   直到FLUSH HOSTS 或者重启MySQL服务。
@@ -374,7 +374,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">max_connect_errors＝ 1000</div></pre></td></tr></table></figure>
 <p>然后登陆mysql执行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FLUSH HOSTS;</div></pre></td></tr></table></figure>
-<p>效果图如下：<br><img src="http://unize4.github.io/upload/blocked.png" alt="mysql_blocked"></p>
+<p>效果图如下：</p>
+<p><img src="http://unize4.github.io/upload/blocked.png" alt="mysql_blocked"></p>
 
       
     </div>
