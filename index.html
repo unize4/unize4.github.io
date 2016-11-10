@@ -349,14 +349,22 @@
       
         
           
-            <ul>
-<li>上传WAR包</li>
-<li>解压WAR包、删除WAR包</li>
+            <p>设置权限<br>本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">ssh-keygen -t rsa</div></pre></td></tr></table></figure></p>
+<ul>
+<li>生成war包</li>
+<li><p>解压、删除上传目录，重新打包</p>
+</li>
+<li><p>上传WAR包<br>本地脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#bin/bash</div><div class="line">mv /Users/apple/guojiao/zhaosheng/branches/branch-20161024-week3/target/jeesite.war /Users/apple/war_build/</div><div class="line">cd /Users/apple/war_build/</div><div class="line">jar -xvf jeesite.war</div><div class="line">rm -rf jeesite.war </div><div class="line">rm -rf WEB-INF/lib/</div><div class="line">rm -rf static/upload/</div><div class="line">jar -cvf jeesite.war ./ </div><div class="line">scp /Users/apple/war_build/jeesite.war root@gjlg.yunjuanyunshu.com:/alidata/www/ftpdir/</div><div class="line">ssh root@gjlg.yunjuanyunshu.com</div><div class="line">./auto_deploy_war.sh</div></pre></td></tr></table></figure>
+</li>
+<li><p>解压WAR包、删除WAR包</p>
+</li>
 <li>清除日志信息</li>
 <li>备份数据库</li>
 <li>重启tomcat</li>
 </ul>
-<p>脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">fromPath = &quot;/alidata/www/ftpdir/jeesite.war&quot;</div><div class="line">toPath = &quot;/alidata/www/default/jeesite.war&quot;</div><div class="line">echo &apos;拷贝 war包...&apos;</div><div class="line">cp $fromPath $toPath</div><div class="line">echo &apos;进入目录...&apos;</div><div class="line">cd /alidata/www/default/</div><div class="line">echo &apos;解压war包...&apos;</div><div class="line">jar -xvf jeesite.war</div><div class="line">echo &apos;删除war包...&apos;</div><div class="line">rm -rf jeesite.war</div><div class="line">echo &apos;停止tomcat...&apos;</div><div class="line">/etc/init.d/tomcat7 stop</div><div class="line">sleep 5</div><div class="line">echo &apos;启动tomcat...&apos;</div><div class="line">/etc/init.d/tomcat7 start</div></pre></td></tr></table></figure></p>
+<p>脚本<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#bin/bash</span></div><div class="line"></div><div class="line">fromPath = <span class="string">"/alidata/www/ftpdir/jeesite.war"</span></div><div class="line">toPath = <span class="string">"/alidata/www/default/jeesite.war"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'拷贝 war包...'</span></div><div class="line">cp <span class="variable">$fromPath</span> <span class="variable">$toPath</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'进入目录...'</span></div><div class="line"><span class="built_in">cd</span> /alidata/www/default/</div><div class="line"><span class="built_in">echo</span> <span class="string">'解压war包...'</span></div><div class="line">jar -xvf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除war包...'</span></div><div class="line">rm -rf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'停止tomcat...'</span></div><div class="line">/etc/init.d/tomcat7 stop</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除logs日志...'</span></div><div class="line">rm -rf /alidata/server/tomcat7/logs/catalina.out</div><div class="line">sleep 5</div><div class="line"><span class="built_in">echo</span> <span class="string">'启动tomcat...'</span></div><div class="line">/etc/init.d/tomcat7 start</div></pre></td></tr></table></figure></p>
+<p><em>注意写完脚本需要 chmod 777修改一下脚本权限</em></p>
 
           
         
