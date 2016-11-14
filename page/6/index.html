@@ -279,8 +279,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/18/macForJdk678/" itemprop="url">
-                  mac安装多个版本jdk，自由切换
+                <a class="post-title-link" href="/2016/09/22/jishu/" itemprop="url">
+                  留学生管理平台｜技术方案
                 </a>
               
             
@@ -293,8 +293,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T22:49:19+08:00" content="2016-09-18">
-              2016-09-18
+            <time itemprop="dateCreated" datetime="2016-09-22T18:54:49+08:00" content="2016-09-22">
+              2016-09-22
             </time>
           </span>
 
@@ -307,8 +307,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/开发环境/" itemprop="url" rel="index">
-                    <span itemprop="name">开发环境</span>
+                  <a href="/categories/计划/" itemprop="url" rel="index">
+                    <span itemprop="name">计划</span>
                   </a>
                 </span>
 
@@ -323,8 +323,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/18/macForJdk678/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/18/macForJdk678/" itemprop="commentsCount"></span>
+                <a href="/2016/09/22/jishu/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/22/jishu/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -349,24 +349,75 @@
       
         
           
-            <ul>
-<li>1、安装JDK6、JDK7、JDK8三个版本，安装后通过Java -version检测是否安装好</li>
-<li>2、打开~/.bash_profile，没有的话创建 <ul>
-<li>vim ~/.bash_profile </li>
-<li>写入以下内容，其中路径对应自己本机实际安装版本路径,保存退出</li>
+            <h2 id="技术方案"><a href="#技术方案" class="headerlink" title="技术方案"></a>技术方案</h2><h3 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h3><p>B/S和C/S，整个完整的系统包括移动端学生教师管理app，web前台界面，后台管理界面。考虑实际的业务需求，需要分两个业务模块。</p>
+<h3 id="后台框架"><a href="#后台框架" class="headerlink" title="后台框架"></a>后台框架</h3><ul>
+<li>后台采用Spring＋SpringMVC＋Mybatis＋activiti等框架，便于进行报名流程的管理。该平台的技术栈如下，<a href="http://unize4.github.io/2016/09/16/jishuxuanxing/" target="_blank" rel="external">留学生信息管理平台技术栈</a><ul>
+<li>使用目前主流的Java EE开发框架，简单易学，学习成本低。</li>
+<li>数据库无限制，目前支持MySql、Oracle，可扩充SQL Server、PostgreSQL、H2等。</li>
+<li>模块化设计，层次结构清晰。内置一系列企业信息管理的基础功能。</li>
+<li>操作权限控制精密细致，对所有管理链接都进行权限验证，可控制到按钮。</li>
+<li>数据权限控制精密细致，对指定数据集权限进行过滤，七种数据权限可供选择。</li>
+<li>提供在线功能代码生成工具，提高开发效率及质量。</li>
+<li>提供常用工具类封装，日志、缓存、验证、字典、组织机构等，常用标签（taglib），获取当前组织机构、字典等数据。</li>
+<li>兼容目前最流行浏览器（IE7+、Chrome、Firefox）IE6也支持，但体验效果差。</li>
+</ul>
+</li>
+<li>activiti 5.0(Java)<ul>
+<li>可扩展性/性能/可靠性</li>
+<li>更有利于多人协作</li>
+<li>向下兼容</li>
+<li>大数据的发展趋势，java值得深入学习，java的性能更好</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">export JAVA_6_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home</div><div class="line">export JAVA_7_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home</div><div class="line">export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</div><div class="line"></div><div class="line">alias jdk6=&quot;export JAVA_HOME=$JAVA_6_HOME&quot; #编辑一个命令jdk6，输入则转至jdk1.6</div><div class="line">alias jdk7=&quot;export JAVA_HOME=$JAVA_7_HOME&quot; #编辑一个命令jdk8，输入则转至jdk1.8</div><div class="line">alias jdk8=&quot;export JAVA_HOME=$JAVA_8_HOME&quot; #编辑一个命令jdk8，输入则转至jdk1.8</div><div class="line"></div><div class="line">export JAVA_HOME=`/usr/libexec/java_home`  #最后安装的版本，这样当自动更新时，始终指向最新版本</div></pre></td></tr></table></figure>
-<ul>
-<li>3、执行下条source命令生效</li>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><ul>
+<li>mysql数据库,后期考虑扩充PostgreSQL<ul>
+<li>mysql基于线程，运行速度快，但数据类型不够丰富</li>
+<li>PostgreSQL面向对象，数据类型丰富，支持json等。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
-<ul>
-<li>4、最后执行分别执行下面命令检验是否成功</li>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">jdk6</div><div class="line">java -version</div><div class="line"></div><div class="line">jdk7</div><div class="line">java -version</div><div class="line"></div><div class="line">jdk8</div><div class="line">java -version</div></pre></td></tr></table></figure>
-<p>效果图如下：<br><img src="http://unize4.github.io/upload/macforjdk.png" alt="macforjdk"></p>
+<h3 id="前端框架"><a href="#前端框架" class="headerlink" title="前端框架"></a>前端框架</h3><ul>
+<li><p>bootstrap v3 <a href="http://bootcss.com" target="_blank" rel="external">http://bootcss.com</a></p>
+<ul>
+<li>最成熟和最广泛使用的Html/css框架，支持IE8+，提供各类常见布局和组件</li>
+<li>社区支持良好，尤其适合快速界面开发和后台界面开发</li>
+<li>对于学习前端知识，可提供一个不错的结构性认识</li>
+</ul>
+</li>
+<li><p>jquery 1.9</p>
+<ul>
+<li>最广泛使用的javascript基础库<br>应有尽有插件支持</li>
+<li>虽然从当前的前端发展方向来看，上述技术均有些落后，但对于普通的WEB开发，这些技术已经足够。</li>
+</ul>
+</li>
+</ul>
+<h3 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h3><p>对比appcan等框架选定，看中混合开发特点。</p>
+<ul>
+<li>react native<ul>
+<li>先进的逻辑层开发框架 </li>
+<li>灵活的 UI 开发框架。</li>
+<li>使用JavaScriptCore进行应用的升级。</li>
+</ul>
+</li>
+</ul>
+<h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><ul>
+<li>mac os</li>
+<li>sublime text 3及各类插件<ul>
+<li>ReactJS : 支持React开发，代码提示，高亮显示 </li>
+<li>Emmet ：前端开发必备。</li>
+<li>Terminal : 在sublime中打开终端并定位到当前目录，神器，mac下的快捷键为：command+shift+T</li>
+<li>react-native-snippets：react native 的代码片段</li>
+</ul>
+</li>
+<li>最新chrome dev 版本</li>
+<li>git</li>
+</ul>
+<h3 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h3><ul>
+<li>OS： CentOS 7 server </li>
+<li>nginx : 负载均衡、反向代理</li>
+<li>tomcat：WEB服务器</li>
+</ul>
 
           
         
@@ -416,8 +467,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/17/gerenxuexijihua/" itemprop="url">
-                  小组第四周计划
+                <a class="post-title-link" href="/2016/09/21/qianduan/" itemprop="url">
+                  前端学习
                 </a>
               
             
@@ -430,8 +481,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-17T18:26:38+08:00" content="2016-09-17">
-              2016-09-17
+            <time itemprop="dateCreated" datetime="2016-09-21T23:38:22+08:00" content="2016-09-21">
+              2016-09-21
             </time>
           </span>
 
@@ -460,8 +511,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/17/gerenxuexijihua/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/17/gerenxuexijihua/" itemprop="commentsCount"></span>
+                <a href="/2016/09/21/qianduan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/21/qianduan/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -486,56 +537,28 @@
       
         
           
-            <blockquote>
-<p>窦坚D,王雨亭W,轩加振X</p>
-</blockquote>
-<h1 id="本周学习计划"><a href="#本周学习计划" class="headerlink" title="本周学习计划"></a>本周学习计划</h1><h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><h3 id="Activiti工作流引擎-W，X"><a href="#Activiti工作流引擎-W，X" class="headerlink" title="Activiti工作流引擎 W，X"></a>Activiti工作流引擎 W，X</h3><ul>
-<li>了解activiti基础，activiti是什么？能干什么？ </li>
-<li>搭建SpringMVC＋Mybatis＋maven＋activiti开发环境        </li>
-<li>学习Acticiti和BPMN2.0规范，学习流程设计。        </li>
-<li>学习启动、结束事件等基本图形，学会进行简单的流程设计</li>
-<li>依据现有框架，构建权限管理系统</li>
+            <h2 id="html、css、js入门实训安排"><a href="#html、css、js入门实训安排" class="headerlink" title="html、css、js入门实训安排"></a>html、css、js入门实训安排</h2><h3 id="主要教程"><a href="#主要教程" class="headerlink" title="主要教程"></a>主要教程</h3><p><a href="https://freecodecamp.cn" target="_blank" rel="external"><br>https://freecodecamp.cn</a></p>
+<p>freecodecamp首页点击导航栏++路径++<br>弹窗内出现的标题为学习内容，学完下列标题下的内容</p>
+<ul>
+<li><p>Html5 and CSS 5</p>
+</li>
+<li><p>Responsive Design with Bootstrap 5</p>
+</li>
+<li><p>jquery 3</p>
+</li>
+<li><p>basic JavaScript 10</p>
+</li>
+<li><p>Object Oriented and Functional Programming 2</p>
+</li>
+<li><p>JSON APIs and Ajax 2</p>
+</li>
 </ul>
-<p>量化标准</p>
-<blockquote>
-<p>activiti本地环境检查，实机流程图绘制<br>后台权限管理系统，用户，角色，功能检查</p>
-</blockquote>
-<h3 id="开发环境的构建-W，X"><a href="#开发环境的构建-W，X" class="headerlink" title="开发环境的构建        W，X"></a>开发环境的构建        W，X</h3><ul>
-<li>Idea 15 开发环境搭建        </li>
-<li>Maven环境搭建            </li>
-<li>本地Tomcat，Linux服务器Java、Tomcat、ngnix环境搭建     </li>
-</ul>
-<p>量化标准</p>
-<blockquote>
-<p>本地环境检查，</p>
-</blockquote>
-<h3 id="React-Native-D，X"><a href="#React-Native-D，X" class="headerlink" title="React Native D，X"></a>React Native D，X</h3><ul>
-<li>熟悉React Native 开发流程以及基本情况        </li>
-<li>制作一个单页面的应用出来                    </li>
-</ul>
-<p>量化标准</p>
-<blockquote>
-<p>可运行IOS（D）和android(X)，登录注册demo检查</p>
-</blockquote>
-<h3 id="Linux-学习-D-W-X"><a href="#Linux-学习-D-W-X" class="headerlink" title="Linux 学习     D,W,X"></a>Linux 学习     D,W,X</h3><ul>
-<li>linux的基本命令与操作</li>
-</ul>
-<p>暂无标准</p>
-<h3 id="Ruby-on-Rails入门（扩展）"><a href="#Ruby-on-Rails入门（扩展）" class="headerlink" title="Ruby on Rails入门（扩展）"></a>Ruby on Rails入门（扩展）</h3><ul>
-<li>如何安装 Rails</li>
-<li>新建 Rails 程序</li>
-<li>如何连接数据库</li>
-<li>Rails 程序的基本文件结构</li>
-</ul>
-<p>选做，不做考察</p>
-<h2 id="学习资源"><a href="#学习资源" class="headerlink" title="学习资源"></a>学习资源</h2><h3 id="图书"><a href="#图书" class="headerlink" title="图书"></a>图书</h3><p><a href="https://book.douban.com/subject/2243615/" target="_blank" rel="external">《Head First 设计模式》</a></p>
-<p><a href="https://book.douban.com/subject/26287219/" target="_blank" rel="external">《Activiti 实战》</a></p>
-<h3 id="在线文档"><a href="#在线文档" class="headerlink" title="在线文档"></a>在线文档</h3><p><a href="http://wiki.jikexueyuan.com/project/intellij-idea-tutorial/" target="_blank" rel="external">Idea使用指南</a></p>
-<p><a href="http://wiki.jikexueyuan.com/project/react-native-lesson/" target="_blank" rel="external">React Native 入门指南</a></p>
-<h3 id="在线课程"><a href="#在线课程" class="headerlink" title="在线课程"></a>在线课程</h3><p><a href="http://www.jikexueyuan.com/course/1777.html" target="_blank" rel="external">Activiti 极客学院教程</a></p>
-<p><a href="http://www.jikexueyuan.com/course/528.html" target="_blank" rel="external">观察者模式</a></p>
-<p><a href="http://www.jikexueyuan.com/course/474.html" target="_blank" rel="external">策略模式</a></p>
-<p><a href="http://www.jikexueyuan.com/course/1509.html" target="_blank" rel="external">迭代器模式</a></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://www.imooc.com/learn/36/" target="_blank" rel="external">慕课网Js入门</a></p>
+<p><a href="http://www.imooc.com/learn/9" target="_blank" rel="external">html+css基础</a></p>
+<p><a href="http://www.w3school.com.cn/" target="_blank" rel="external">W3school</a></p>
+<p><a href="http://www.jikexueyuan.com/" target="_blank" rel="external">极客学院</a></p>
+<h3 id="选学"><a href="#选学" class="headerlink" title="选学"></a>选学</h3><p><a href="http://www.imooc.com/learn/333" target="_blank" rel="external">sublime 使用</a></p>
+<h3 id="考核任务："><a href="#考核任务：" class="headerlink" title="考核任务："></a>考核任务：</h3><p>尽力实现如下图效果<br><img src="http://7xrp04.com1.z0.glb.clouddn.com/task_1_11_1.jpg" alt="image"></p>
 
           
         
@@ -568,7 +591,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -609,7 +632,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -617,7 +640,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -626,7 +649,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

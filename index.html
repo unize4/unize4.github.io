@@ -279,8 +279,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/10/linux/" itemprop="url">
-                  服务器部署步骤
+                <a class="post-title-link" href="/2016/11/14/1114plan/" itemprop="url">
+                  11.14plan
                 </a>
               
             
@@ -293,8 +293,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-10T12:41:32+08:00" content="2016-11-10">
-              2016-11-10
+            <time itemprop="dateCreated" datetime="2016-11-14T09:21:41+08:00" content="2016-11-14">
+              2016-11-14
             </time>
           </span>
 
@@ -307,8 +307,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/notes/" itemprop="url" rel="index">
-                    <span itemprop="name">notes</span>
+                  <a href="/categories/plan/" itemprop="url" rel="index">
+                    <span itemprop="name">plan</span>
                   </a>
                 </span>
 
@@ -323,8 +323,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/10/linux/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/10/linux/" itemprop="commentsCount"></span>
+                <a href="/2016/11/14/1114plan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/14/1114plan/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -349,22 +349,16 @@
       
         
           
-            <p>设置密钥免密码登录<br><a href="http://jingyan.baidu.com/article/00a07f38bb594682d028dcc8.html" target="_blank" rel="external">http://jingyan.baidu.com/article/00a07f38bb594682d028dcc8.html</a></p>
-<ul>
-<li>生成war包</li>
-<li><p>解压、删除上传目录，重新打包</p>
+            <ul>
+<li>zhaosheng<blockquote>
+<p>测试一下网站的所有中英文切换问题，包括cms的文章链接的管理等。<br>招生申请流程主要界面包括：首页－－》报名申请页（第一步，第二步，预览）－－》报名结果页<br>报名结果页页头修正</p>
+</blockquote>
 </li>
-<li><p>上传WAR包<br>本地脚本</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#bin/bash</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'拷贝war包'</span></div><div class="line">mv /Users/apple/guojiao/zhaosheng/branches/branch-20161024-week3/target/jeesite.war /Users/apple/war_build/</div><div class="line"><span class="built_in">echo</span> <span class="string">'进入目录/Users/app/war_build...'</span></div><div class="line"><span class="built_in">cd</span> /Users/apple/war_build/</div><div class="line"><span class="built_in">echo</span> <span class="string">'解压war包...'</span></div><div class="line">jar -xvf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除war包...'</span></div><div class="line">rm -rf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除lib...'</span></div><div class="line">rm -rf WEB-INF/lib/</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除upload...'</span></div><div class="line">rm -rf static/upload/</div><div class="line"><span class="built_in">echo</span> <span class="string">'打包war包...'</span></div><div class="line">jar -cvf jeesite.war ./</div><div class="line"><span class="built_in">echo</span> <span class="string">'上传war包'</span></div><div class="line">scp /Users/apple/war_build/jeesite.war root@gjlg.yunjuanyunshu.com:/alidata/www/ftpdir/</div><div class="line"><span class="built_in">echo</span> <span class="string">'运行服务器脚本...'</span></div><div class="line">ssh root@gjlg.yunjuanyunshu.com <span class="string">"./auto_deploy_war.sh"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'部署完成'</span></div></pre></td></tr></table></figure>
+<li>charge<blockquote>
+<p>新增充电订单表，属性大概包括，订单编号，创建人，创建时间，结束时间，已充电能，已充价格，充电桩id，汽车，订单状态（0新建，1开始充电，2），最终支付订单价格。<br>新增支付宝订单表，参照花神设置支付流程，大概是手机端创建订单（创建订单接口），后台调取支付宝回调，然后将回调接口返回，手机端根据回调结果创建支付订单，手机端支付，支付完成（支付完成接口），后台将支付结果返回到手机。账户金额增加，支付完成。<br>手机端，支付宝充值，要求可自由输入价格。目前只开通支付宝。<br>手机端，扫码访问网址，网址组成为，m／start？id＝xxxx（充电桩编号）<br>后台创建命令表，命令纪录表，命令内容，订单id，创建时间。<br>创建OrderUtil类，针对命令进行解析<br>后台创建监听，等待连接，连接建立，检查初始状态，没有问题开始充电，更改充电订单状态为1，给充电桩发命令开始充电。充电过程中不断解析，数据，通过OrderUtil.setCharge,然后存到充电表。<br>手机端不断查询当前用户的当前订单状态。需要一个接口，可查到当前用户正在进行中的订单。（大于0）</p>
+</blockquote>
 </li>
-<li><p>解压WAR包、删除WAR包</p>
-</li>
-<li>清除日志信息</li>
-<li>备份数据库</li>
-<li>重启tomcat</li>
 </ul>
-<p>脚本<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Function:    auto deploy war</span></div><div class="line"><span class="comment">#Usage:       bash auto_deploy_war.sh</span></div><div class="line"><span class="comment">#Author:      unize4</span></div><div class="line"><span class="comment">#Version:     2.0</span></div><div class="line"><span class="comment">#########################################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'拷贝 war包...'</span></div><div class="line">cp /alidata/www/ftpdir/jeesite.war /alidata/www/default</div><div class="line"><span class="built_in">echo</span> <span class="string">'进入目录...'</span></div><div class="line"><span class="built_in">cd</span> /alidata/www/default/</div><div class="line"><span class="built_in">echo</span> <span class="string">'设置变量...'</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div><div class="line"><span class="built_in">echo</span> <span class="string">'解压war...'</span></div><div class="line">jar -xvf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除war包...'</span></div><div class="line">rm -rf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'停止tomcat..'</span></div><div class="line">/etc/init.d/tomcat7 stop</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除logs日志...'</span></div><div class="line">rm -rf /alidata/server/tomcat7/logs/catalina.out</div><div class="line">sleep 5</div><div class="line"><span class="built_in">echo</span> <span class="string">'启动tomcat...'</span></div><div class="line">/etc/init.d/tomcat7 start</div><div class="line"><span class="built_in">echo</span> <span class="string">'启动完成...'</span></div></pre></td></tr></table></figure></p>
-<p><em>注意写完脚本需要 chmod 777修改一下脚本权限</em></p>
 
           
         
@@ -414,8 +408,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/10/mysql_blocked/" itemprop="url">
-                  mysql：is blocked because of many connection errors
+                <a class="post-title-link" href="/2016/11/14/thinks/" itemprop="url">
+                  关于做计划
                 </a>
               
             
@@ -428,8 +422,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-10T12:10:23+08:00" content="2016-11-10">
-              2016-11-10
+            <time itemprop="dateCreated" datetime="2016-11-14T09:06:56+08:00" content="2016-11-14">
+              2016-11-14
             </time>
           </span>
 
@@ -442,8 +436,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/bugs/" itemprop="url" rel="index">
-                    <span itemprop="name">bugs</span>
+                  <a href="/categories/think/" itemprop="url" rel="index">
+                    <span itemprop="name">think</span>
                   </a>
                 </span>
 
@@ -458,8 +452,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/10/mysql_blocked/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/10/mysql_blocked/" itemprop="commentsCount"></span>
+                <a href="/2016/11/14/thinks/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/14/thinks/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -484,17 +478,10 @@
       
         
           
-            <blockquote>
-<p>是由于MYSQL数据库的参数：max_connect_errors（系统默认10）<br>  mysqld已经得到了大量(max_connect_errors)的主机’hostname’的在中途被中断了的连接请求累计超过10次，就再也无法连接上mysqld服务，<br>   直到FLUSH HOSTS 或者重启MySQL服务。</p>
-<ul>
-<li>解决办法：<br>在my.cnf中mysqld节点下加一行</li>
-</ul>
+            <p>以前总是懒得做计划，觉得做了也没什么用，总是不去执行。后来发现，是计划做的不够细。<br>模糊的计划，模糊的行动，很容易怠惰起来。但做详细的计划又特别的耗时间。具体到要做什<br>么事，怎么做。比如要改一个bug，就要去想需要做哪些改动，具体到要动哪个实体的属性，<br>具体到要怎么写代码。有时候一天的计划要花半天来理清。但是我觉得依旧很值得。有这种非<br>常清晰的计划，可以专心的去把计划的事情完成。甚至，如果计划写的足够详细，拿去指派给<br>任何一个人都可以接手，而不用过多的解释。这样提高的效率不是一点半点。这种理清计划去<br>办事最后按部就班的完成工作的感觉，十分的愉快充实！</p>
+<blockquote>
+<p>总之，详细的行动步骤是一天工作的保证，也是不把自己搞得手忙脚乱的保证！</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">max_connect_errors＝ 1000</div></pre></td></tr></table></figure>
-<p>然后登陆mysql执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FLUSH HOSTS;</div></pre></td></tr></table></figure>
-<p>效果图如下：</p>
-<p><img src="/upload/blocked.png" alt="mysql_blocked"></p>
 
           
         
@@ -527,7 +514,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -568,7 +555,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -576,7 +563,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -585,7 +572,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -279,8 +279,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/30/bug_one/" itemprop="url">
-                  idea properties中内容自动编码问题
+                <a class="post-title-link" href="/2016/11/09/hexo_next/" itemprop="url">
+                  Hexo Next主题界面空白 vendors下资源不加载办法
                 </a>
               
             
@@ -293,8 +293,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-30T14:41:26+08:00" content="2016-09-30">
-              2016-09-30
+            <time itemprop="dateCreated" datetime="2016-11-09T19:03:22+08:00" content="2016-11-09">
+              2016-11-09
             </time>
           </span>
 
@@ -323,8 +323,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/30/bug_one/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/bug_one/" itemprop="commentsCount"></span>
+                <a href="/2016/11/09/hexo_next/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/09/hexo_next/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -349,9 +349,15 @@
       
         
           
-            <blockquote>
-<p>在Preferences - File Encoding，在标红的选项上打上勾，确定即可</p>
+            <p>Next作者的回复是</p>
+<blockquote>
+<p>vendors目录被guthub pages屏蔽，将vendors改成其他名字即可，主题配置文件里面也需要改</p>
 </blockquote>
+<p>github官方回复</p>
+<blockquote>
+<p>We recently updated to Jekyll v3.3, which ignores the vendor folder by default.If you’re not using Jekyll, you can add a .nojekyll file to the root of your repository to disable Jekyll from building your site.</p>
+</blockquote>
+<p>麻烦的办法：<br>直接登陆github，在仓库上新建文件.nojekyll但是每次重新执行hexo clean/g/d之后文件会被删除。直接在本地hexo的public或者source目录新建文件总是没办法提交成功。（点开头的文件不提交？）<br>简单的办法：<br>把source文件夹下vendors改成了static。<br>还有主题配置文件_config.yml,vendors的第一项后面vendors改成static。</p>
 
           
         
@@ -401,8 +407,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/28/study/" itemprop="url">
-                  基于积分商城的学习任务发布平台
+                <a class="post-title-link" href="/2016/11/09/bug_two/" itemprop="url">
+                  招生系统的一些问题
                 </a>
               
             
@@ -415,8 +421,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-28T13:10:20+08:00" content="2016-09-28">
-              2016-09-28
+            <time itemprop="dateCreated" datetime="2016-11-09T15:45:08+08:00" content="2016-11-09">
+              2016-11-09
             </time>
           </span>
 
@@ -429,8 +435,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/想法/" itemprop="url" rel="index">
-                    <span itemprop="name">想法</span>
+                  <a href="/categories/bugs/" itemprop="url" rel="index">
+                    <span itemprop="name">bugs</span>
                   </a>
                 </span>
 
@@ -445,8 +451,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/28/study/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/28/study/" itemprop="commentsCount"></span>
+                <a href="/2016/11/09/bug_two/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/09/bug_two/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -471,45 +477,59 @@
       
         
           
-            <h2 id="学习任务发布平台"><a href="#学习任务发布平台" class="headerlink" title="学习任务发布平台"></a>学习任务发布平台</h2><blockquote>
-<p>基于发布任务的学习平台模块，在线学习可获得等级，一定等级的可发布或接受积分奖励的任务。并设置定制的商品由积分兑换。</p>
-</blockquote>
-<h3 id="功能划分"><a href="#功能划分" class="headerlink" title="功能划分"></a>功能划分</h3><blockquote>
-<p>平台初步构想分为多个功能模块。</p>
+            <ul>
+<li>官网页脚问题（＊）</li>
+</ul>
+<blockquote>
+<p>首页是单独的页面不引用公共的页眉页脚。列表页和文章详情页引用的是公共的页眉页脚。页眉页脚文件为各自主题下的layouts文件夹下的default文件。 </p>
 </blockquote>
 <ul>
-<li><p>学习功能</p>
-<blockquote>
-<p>个人学习路线规划，以及在线学习内容，类似<a href="https://freecodecamp.cn" target="_blank" rel="external">https://freecodecamp.cn</a></p>
-</blockquote>
-</li>
-<li><p>能力值</p>
-<blockquote>
-<p>根据学习进度设置能力值，相当于等级，这个可通过学习相应的学习课程获得评定</p>
-</blockquote>
-</li>
-<li><p>积分</p>
-<blockquote>
-<p>完成账户绑定，手机验证等可获得一定的积分奖励，积分可充值。积分可用来在商城里购买定制商品。</p>
-</blockquote>
-</li>
-<li><p>任务</p>
-<blockquote>
-<p>发布任务可设置积分奖励，需要由发布者支付。其他人可选择接任务，任务完成经发布者确定可给予之前设置的积分奖励。</p>
-</blockquote>
-</li>
-<li>商城<blockquote>
-<p>定制一些精美实用新奇的商品。一定要是精品。定价放到商城，只能通过积分兑换。</p>
-</blockquote>
-</li>
+<li>官网中英文遗留问题（＊＊）</li>
 </ul>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li><p>针对计算机相关专业，html/css,js,java,c/c#/c++等计算机语言类的学习平台，前期可针对单个方面做精，比如前端，html/css/js</p>
-</li>
-<li><p>未完待续。。。</p>
-</li>
+<blockquote>
+<p>中文官网主题文件夹为officialsite，英文官网主题为officialsite_en。英文网站的列表页和详情页应和中文站点相同。</p>
+</blockquote>
+<ul>
+<li>招生登录注册界面（＊）</li>
 </ul>
-
+<blockquote>
+<p>招生登录界面的页脚版权信息添加</p>
+</blockquote>
+<ul>
+<li>忘记密码？</li>
+</ul>
+<blockquote>
+<p>。。。</p>
+</blockquote>
+<ul>
+<li>申请界面照片选择（＊＊）</li>
+</ul>
+<blockquote>
+<p>照片选择功能完善，加预览。（功能已写好，简单迁移）</p>
+</blockquote>
+<ul>
+<li>表单保存并下一步（＊＊）</li>
+</ul>
+<blockquote>
+<p>表单填完一步要保存的数据库，下次进入还能查看。</p>
+</blockquote>
+<ul>
+<li>表单字典（＊）</li>
+</ul>
+<blockquote>
+<p>宗教信仰、健康状况、学历、HSK登等级，以上为优先确定，其他的自行检查下。</p>
+</blockquote>
+<ul>
+<li>第二步信息填写之后（＊＊＊）</li>
+</ul>
+<blockquote>
+<p>第二步申请的时候不启动流程，需要单独写一个启动流程的接口，在预览界面添加提交的按钮，应该是结果展示列表。</p>
+<ul>
+<li>招生页面英文版（＊＊＊＊）</li>
+</ul>
+<p>切换方式已选定，简单的说就是将原来的申请方式controller复制一遍加上_en,通过request里面的refer属性进行跳转。配置文件要加一个属性为默认的站点状态（中文还是英文），用户未登录的时候打开首页的时候从配置文件里读区设置，注册后记录用户的默认状态，存到数据库中，每次登录打开首页时根据用户上次的状态来确定打开中文还是英文的首页。</p>
+</blockquote>
+<h4 id="所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！"><a href="#所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！" class="headerlink" title="所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！"></a>所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！</h4>
           
         
       
@@ -541,7 +561,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -582,7 +602,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -590,7 +610,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -599,7 +619,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
