@@ -279,6 +279,136 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/10/mysql_blocked/" itemprop="url">
+                  mysql：is blocked because of many connection errors
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-10T12:10:23+08:00" content="2016-11-10">
+              2016-11-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/bugs/" itemprop="url" rel="index">
+                    <span itemprop="name">bugs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/10/mysql_blocked/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/10/mysql_blocked/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>是由于MYSQL数据库的参数：max_connect_errors（系统默认10）<br>  mysqld已经得到了大量(max_connect_errors)的主机’hostname’的在中途被中断了的连接请求累计超过10次，就再也无法连接上mysqld服务，<br>   直到FLUSH HOSTS 或者重启MySQL服务。</p>
+<ul>
+<li>解决办法：<br>在my.cnf中mysqld节点下加一行</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">max_connect_errors＝ 1000</div></pre></td></tr></table></figure>
+<p>然后登陆mysql执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FLUSH HOSTS;</div></pre></td></tr></table></figure>
+<p>效果图如下：</p>
+<p><img src="/upload/blocked.png" alt="mysql_blocked"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/09/hexo_next/" itemprop="url">
                   Hexo Next主题界面空白 vendors下资源不加载办法
                 </a>
@@ -386,182 +516,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/09/bug_two/" itemprop="url">
-                  招生系统的一些问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-09T15:45:08+08:00" content="2016-11-09">
-              2016-11-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/bugs/" itemprop="url" rel="index">
-                    <span itemprop="name">bugs</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/11/09/bug_two/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/09/bug_two/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>官网页脚问题（＊）</li>
-</ul>
-<blockquote>
-<p>首页是单独的页面不引用公共的页眉页脚。列表页和文章详情页引用的是公共的页眉页脚。页眉页脚文件为各自主题下的layouts文件夹下的default文件。 </p>
-</blockquote>
-<ul>
-<li>官网中英文遗留问题（＊＊）</li>
-</ul>
-<blockquote>
-<p>中文官网主题文件夹为officialsite，英文官网主题为officialsite_en。英文网站的列表页和详情页应和中文站点相同。</p>
-</blockquote>
-<ul>
-<li>招生登录注册界面（＊）</li>
-</ul>
-<blockquote>
-<p>招生登录界面的页脚版权信息添加</p>
-</blockquote>
-<ul>
-<li>忘记密码？</li>
-</ul>
-<blockquote>
-<p>。。。</p>
-</blockquote>
-<ul>
-<li>申请界面照片选择（＊＊）</li>
-</ul>
-<blockquote>
-<p>照片选择功能完善，加预览。（功能已写好，简单迁移）</p>
-</blockquote>
-<ul>
-<li>表单保存并下一步（＊＊）</li>
-</ul>
-<blockquote>
-<p>表单填完一步要保存的数据库，下次进入还能查看。</p>
-</blockquote>
-<ul>
-<li>表单字典（＊）</li>
-</ul>
-<blockquote>
-<p>宗教信仰、健康状况、学历、HSK登等级，以上为优先确定，其他的自行检查下。</p>
-</blockquote>
-<ul>
-<li>第二步信息填写之后（＊＊＊）</li>
-</ul>
-<blockquote>
-<p>第二步申请的时候不启动流程，需要单独写一个启动流程的接口，在预览界面添加提交的按钮，应该是结果展示列表。</p>
-<ul>
-<li>招生页面英文版（＊＊＊＊）</li>
-</ul>
-<p>切换方式已选定，简单的说就是将原来的申请方式controller复制一遍加上_en,通过request里面的refer属性进行跳转。配置文件要加一个属性为默认的站点状态（中文还是英文），用户未登录的时候打开首页的时候从配置文件里读区设置，注册后记录用户的默认状态，存到数据库中，每次登录打开首页时根据用户上次的状态来确定打开中文还是英文的首页。</p>
-</blockquote>
-<h4 id="所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！"><a href="#所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！" class="headerlink" title="所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！"></a>所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！</h4>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -602,7 +561,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -610,7 +569,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
