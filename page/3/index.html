@@ -279,6 +279,141 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/10/linux/" itemprop="url">
+                  服务器部署步骤
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-10T12:41:32+08:00" content="2016-11-10">
+              2016-11-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/notes/" itemprop="url" rel="index">
+                    <span itemprop="name">notes</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/10/linux/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/10/linux/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>设置密钥免密码登录<br><a href="http://jingyan.baidu.com/article/00a07f38bb594682d028dcc8.html" target="_blank" rel="external">http://jingyan.baidu.com/article/00a07f38bb594682d028dcc8.html</a></p>
+<ul>
+<li>生成war包</li>
+<li><p>解压、删除上传目录，重新打包</p>
+</li>
+<li><p>上传WAR包<br>本地脚本</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#bin/bash</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'拷贝war包'</span></div><div class="line">mv /Users/apple/guojiao/zhaosheng/branches/branch-20161024-week3/target/jeesite.war /Users/apple/war_build/</div><div class="line"><span class="built_in">echo</span> <span class="string">'进入目录/Users/app/war_build...'</span></div><div class="line"><span class="built_in">cd</span> /Users/apple/war_build/</div><div class="line"><span class="built_in">echo</span> <span class="string">'解压war包...'</span></div><div class="line">jar -xvf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除war包...'</span></div><div class="line">rm -rf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除lib...'</span></div><div class="line">rm -rf WEB-INF/lib/</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除upload...'</span></div><div class="line">rm -rf static/upload/</div><div class="line"><span class="built_in">echo</span> <span class="string">'打包war包...'</span></div><div class="line">jar -cvf jeesite.war ./</div><div class="line"><span class="built_in">echo</span> <span class="string">'上传war包'</span></div><div class="line">scp /Users/apple/war_build/jeesite.war root@gjlg.yunjuanyunshu.com:/alidata/www/ftpdir/</div><div class="line"><span class="built_in">echo</span> <span class="string">'运行服务器脚本...'</span></div><div class="line">ssh root@gjlg.yunjuanyunshu.com <span class="string">"./auto_deploy_war.sh"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'部署完成'</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>解压WAR包、删除WAR包</p>
+</li>
+<li>清除日志信息</li>
+<li>备份数据库</li>
+<li>重启tomcat</li>
+</ul>
+<p>脚本<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Function:    auto deploy war</span></div><div class="line"><span class="comment">#Usage:       bash auto_deploy_war.sh</span></div><div class="line"><span class="comment">#Author:      unize4</span></div><div class="line"><span class="comment">#Version:     2.0</span></div><div class="line"><span class="comment">#########################################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'拷贝 war包...'</span></div><div class="line">cp /alidata/www/ftpdir/jeesite.war /alidata/www/default</div><div class="line"><span class="built_in">echo</span> <span class="string">'进入目录...'</span></div><div class="line"><span class="built_in">cd</span> /alidata/www/default/</div><div class="line"><span class="built_in">echo</span> <span class="string">'设置变量...'</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div><div class="line"><span class="built_in">echo</span> <span class="string">'解压war...'</span></div><div class="line">jar -xvf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除war包...'</span></div><div class="line">rm -rf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'停止tomcat..'</span></div><div class="line">/etc/init.d/tomcat7 stop</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除logs日志...'</span></div><div class="line">rm -rf /alidata/server/tomcat7/logs/catalina.out</div><div class="line">sleep 5</div><div class="line"><span class="built_in">echo</span> <span class="string">'启动tomcat...'</span></div><div class="line">/etc/init.d/tomcat7 start</div><div class="line"><span class="built_in">echo</span> <span class="string">'启动完成...'</span></div></pre></td></tr></table></figure></p>
+<p><em>注意写完脚本需要 chmod 777修改一下脚本权限</em></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/10/mysql_blocked/" itemprop="url">
                   mysql：is blocked because of many connection errors
                 </a>
@@ -388,134 +523,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/09/hexo_next/" itemprop="url">
-                  Hexo Next主题界面空白 vendors下资源不加载办法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-09T19:03:22+08:00" content="2016-11-09">
-              2016-11-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/bugs/" itemprop="url" rel="index">
-                    <span itemprop="name">bugs</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/11/09/hexo_next/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/09/hexo_next/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Next作者的回复是</p>
-<blockquote>
-<p>vendors目录被guthub pages屏蔽，将vendors改成其他名字即可，主题配置文件里面也需要改</p>
-</blockquote>
-<p>github官方回复</p>
-<blockquote>
-<p>We recently updated to Jekyll v3.3, which ignores the vendor folder by default.If you’re not using Jekyll, you can add a .nojekyll file to the root of your repository to disable Jekyll from building your site.</p>
-</blockquote>
-<p>麻烦的办法：<br>直接登陆github，在仓库上新建文件.nojekyll但是每次重新执行hexo clean/g/d之后文件会被删除。直接在本地hexo的public或者source目录新建文件总是没办法提交成功。（点开头的文件不提交？）<br>简单的办法：<br>把source文件夹下vendors改成了static。<br>还有主题配置文件_config.yml,vendors的第一项后面vendors改成static。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -561,7 +568,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -569,7 +576,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

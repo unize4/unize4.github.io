@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="日常," />
 
 
 
@@ -84,15 +84,25 @@
 
 
 
-<meta name="description" content="这个人有点懒">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tom的书房">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Scanner类在java.util包中,有兴趣可以去看看源码.Scanner用来进行基本类型的输入,像int、double、字符串等.Scanner使用简单,但是运行不够高效.
+
+通过预定义标准输入流System.in来创建Scanner类的对象。如果需要读取文件则预定义File类对象.
+对于数据类型为XXX的数值的输入，可以使用方法nextXXX().例如,读取一个short类型的数据,可以用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA中的Scanner类(IO)[JAVA][译]">
+<meta property="og:url" content="http://yoursite.com/2016/11/17/java_learn/index.html">
 <meta property="og:site_name" content="Tom的书房">
-<meta property="og:description" content="这个人有点懒">
+<meta property="og:description" content="Scanner类在java.util包中,有兴趣可以去看看源码.Scanner用来进行基本类型的输入,像int、double、字符串等.Scanner使用简单,但是运行不够高效.
+
+通过预定义标准输入流System.in来创建Scanner类的对象。如果需要读取文件则预定义File类对象.
+对于数据类型为XXX的数值的输入，可以使用方法nextXXX().例如,读取一个short类型的数据,可以用">
+<meta property="og:updated_time" content="2016-11-17T10:34:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tom的书房">
-<meta name="twitter:description" content="这个人有点懒">
+<meta name="twitter:title" content="JAVA中的Scanner类(IO)[JAVA][译]">
+<meta name="twitter:description" content="Scanner类在java.util包中,有兴趣可以去看看源码.Scanner用来进行基本类型的输入,像int、double、字符串等.Scanner使用简单,但是运行不够高效.
+
+通过预定义标准输入流System.in来创建Scanner类的对象。如果需要读取文件则预定义File类对象.
+对于数据类型为XXX的数值的输入，可以使用方法nextXXX().例如,读取一个short类型的数据,可以用">
 
 
 
@@ -113,10 +123,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/17/java_learn/"/>
 
 
-  <title> Tom的书房 </title>
+  <title> JAVA中的Scanner类(IO)[JAVA][译] | Tom的书房 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,9 +147,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -256,9 +264,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -278,10 +286,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/11/17/java_learn/" itemprop="url">
-                  JAVA中的Scanner类(IO)[JAVA][译]
-                </a>
+                JAVA中的Scanner类(IO)[JAVA][译]
               
             
           </h1>
@@ -336,6 +341,11 @@
           
 
           
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
         </div>
       </header>
     
@@ -347,9 +357,7 @@
       
 
       
-        
-          
-            <p>Scanner类在<a href="http://www.yiibai.com/java/util/java_util_scanner.html" target="_blank" rel="external">java.util包</a>中,有兴趣可以去看看源码.Scanner用来进行基本类型的输入,像int、double、字符串等.Scanner使用简单,但是运行不够高效.</p>
+        <p>Scanner类在<a href="http://www.yiibai.com/java/util/java_util_scanner.html" target="_blank" rel="external">java.util包</a>中,有兴趣可以去看看源码.Scanner用来进行基本类型的输入,像int、double、字符串等.Scanner使用简单,但是运行不够高效.</p>
 <ul>
 <li>通过预定义标准输入流System.in来创建Scanner类的对象。如果需要读取文件则预定义File类对象.</li>
 <li>对于数据类型为XXX的数值的输入，可以使用方法nextXXX().例如,读取一个short类型的数据,可以用nextShort(),注意大小写(<a href="https://www.google.com.hk/search?q=%E9%A9%BC%E5%B3%B0%E5%91%BD%E5%90%8D%E6%B3%95" target="_blank" rel="external">驼峰命名法</a>).</li>
@@ -388,162 +396,80 @@
 <p>next()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">    * Finds and returns the next complete token from this scanner.</div><div class="line">    * A complete token is preceded and followed by input that matches</div><div class="line">    * the delimiter pattern. This method may block while waiting for input</div><div class="line">    * to scan, even if a previous invocation of &#123;@link #hasNext&#125; returned</div><div class="line">    * &lt;code&gt;true&lt;/code&gt;.</div><div class="line">    *</div><div class="line">    * @return the next token</div><div class="line">    * @throws NoSuchElementException if no more tokens are available</div><div class="line">    * @throws IllegalStateException if this scanner is closed</div><div class="line">    * @see java.util.Iterator</div><div class="line">    */</div><div class="line">   public String next() &#123;</div><div class="line">       ensureOpen();</div><div class="line">       clearCaches();</div><div class="line"></div><div class="line">       while (true) &#123;</div><div class="line">           String token = getCompleteTokenInBuffer(null);</div><div class="line">           if (token != null) &#123;</div><div class="line">               matchValid = true;</div><div class="line">               skipped = false;</div><div class="line">               return token;</div><div class="line">           &#125;</div><div class="line">           if (needInput)</div><div class="line">               readInput();</div><div class="line">           else</div><div class="line">               throwFor();</div><div class="line">       &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
 <p>readInput()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">// Tries to read more input. May block.</div><div class="line"> private void readInput() &#123;</div><div class="line">     if (buf.limit() == buf.capacity())</div><div class="line">         makeSpace();</div><div class="line"></div><div class="line">     // Prepare to receive data</div><div class="line">     int p = buf.position();</div><div class="line">     buf.position(buf.limit());</div><div class="line">     buf.limit(buf.capacity());</div><div class="line"></div><div class="line">     int n = 0;</div><div class="line">     try &#123;</div><div class="line">         n = source.read(buf);</div><div class="line">     &#125; catch (IOException ioe) &#123;</div><div class="line">         lastException = ioe;</div><div class="line">         n = -1;</div><div class="line">     &#125;</div><div class="line"></div><div class="line">     if (n == -1) &#123;</div><div class="line">         sourceClosed = true;</div><div class="line">         needInput = false;</div><div class="line">     &#125;</div><div class="line"></div><div class="line">     if (n &gt; 0)</div><div class="line">         needInput = false;</div><div class="line"></div><div class="line">     // Restore current position and limit for reading</div><div class="line">     buf.limit(buf.position());</div><div class="line">     buf.position(p);</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果觉得写的不错，那就打赏一下吧！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/weixin.png" alt="unize4 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay.png" alt="unize4 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
     </div>
+  </div>
 
-    <div>
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/14/nodeTree/" itemprop="url">
-                  二叉树
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-14T16:23:48+08:00" content="2016-11-14">
-              2016-11-14
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习/" itemprop="url" rel="index">
-                    <span itemprop="name">学习</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/11/14/nodeTree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/14/nodeTree/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/日常/" rel="tag">#日常</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>二叉树先序递归建树，先序遍历，并分别输出左边和右边的节点</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.charging.server.controller;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</div><div class="line">	Node left;</div><div class="line">	Node right;</div><div class="line">	<span class="keyword">char</span> data;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">char</span> data)</span> </span>&#123;</div><div class="line">		left = <span class="keyword">null</span>;</div><div class="line">		right = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">this</span>.data = data;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">char</span> <span class="title">getData</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> data;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> Node <span class="title">getLeft</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> left;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> Node <span class="title">getRight</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> right;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLeft</span><span class="params">(Node left)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.left = left;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRight</span><span class="params">(Node right)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.right = right;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(<span class="keyword">char</span> data)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.data = data;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.charging.server.controller;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tree</span> </span>&#123;</div><div class="line">	    Node root; <span class="comment">// 根节点</span></div><div class="line">	    <span class="keyword">int</span> size; <span class="comment">// 树长度</span></div><div class="line">	    String data; <span class="comment">// 数的数据</span></div><div class="line">	    <span class="keyword">int</span> index; </div><div class="line"></div><div class="line">	    <span class="function"><span class="keyword">public</span> <span class="title">Tree</span><span class="params">(String data)</span> </span>&#123;</div><div class="line">	        <span class="keyword">this</span>.data = data;</div><div class="line">	        size = data.length();</div><div class="line">	        index = <span class="number">0</span>;</div><div class="line">	        root = createTree();</div><div class="line">	    &#125;</div><div class="line"></div><div class="line">	    <span class="function"><span class="keyword">public</span> Node <span class="title">createTree</span><span class="params">()</span> </span>&#123; <span class="comment">// 采用递归生成二叉树</span></div><div class="line">	        <span class="keyword">char</span> ch = data.charAt(index ++);</div><div class="line">	        <span class="keyword">if</span>(ch == <span class="string">'0'</span>)</div><div class="line">	            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	        <span class="keyword">else</span> &#123;</div><div class="line">	            Node node = <span class="keyword">new</span> Node(ch);</div><div class="line">	            node.setLeft(createTree());</div><div class="line">	            node.setRight(createTree());</div><div class="line">	            <span class="keyword">return</span> node;</div><div class="line">	        &#125;</div><div class="line">	    &#125;</div><div class="line"></div><div class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preShow</span><span class="params">(Node node)</span> </span>&#123; <span class="comment">// 先序遍历</span></div><div class="line">	        <span class="keyword">if</span> (node != <span class="keyword">null</span>) &#123;</div><div class="line">	            System.out.print(node.getData() + <span class="string">" "</span>);</div><div class="line">	            preShow(node.getLeft());</div><div class="line">	            preShow(node.getRight());</div><div class="line">	        &#125;</div><div class="line">	    &#125;</div><div class="line">	    <span class="function"><span class="keyword">public</span> Node <span class="title">getLeft</span><span class="params">(Node node)</span></span>&#123;</div><div class="line">	    	 <span class="keyword">if</span> (node != <span class="keyword">null</span>) &#123;</div><div class="line">		            <span class="keyword">return</span> node.getLeft();</div><div class="line">		        &#125;</div><div class="line">	    	 <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	    &#125;</div><div class="line">	    <span class="function"><span class="keyword">public</span> Node <span class="title">getRight</span><span class="params">(Node node)</span></span>&#123;</div><div class="line">	    	 <span class="keyword">if</span> (node != <span class="keyword">null</span>) &#123;</div><div class="line">		            <span class="keyword">return</span> node.getRight();</div><div class="line">		        &#125;</div><div class="line">	    	 <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	    &#125;</div><div class="line"></div><div class="line">			<span class="function"><span class="keyword">public</span> Node <span class="title">getRoot</span><span class="params">()</span> </span>&#123;</div><div class="line">				<span class="keyword">return</span> root;</div><div class="line">			&#125;</div><div class="line">		&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">package</span> com.charging.server.controller;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		String data = <span class="string">"34100c0050100"</span>;</div><div class="line">		data = <span class="string">"32030030100"</span>;</div><div class="line">        Tree tree = <span class="keyword">new</span> Tree(data);</div><div class="line"></div><div class="line">        </div><div class="line">        System.err.println(tree.getRoot().getData()+<span class="string">"-l"</span>);</div><div class="line">        Node noderootletf = tree.getRoot();</div><div class="line">        <span class="keyword">while</span>(tree.getLeft(noderootletf)!=<span class="keyword">null</span>)&#123;</div><div class="line">        	noderootletf = tree.getLeft(noderootletf);</div><div class="line">        	System.err.println(noderootletf.getData()+<span class="string">"-l"</span>);</div><div class="line">        	</div><div class="line">        &#125;</div><div class="line">       </div><div class="line">        System.err.println(tree.getRoot().getData()+<span class="string">"-r"</span>);</div><div class="line">        Node noderoot = tree.getRoot();</div><div class="line">        <span class="keyword">while</span>(tree.getRight(noderoot)!=<span class="keyword">null</span>)&#123;</div><div class="line">        	noderoot = tree.getRight(noderoot);</div><div class="line">        	System.err.println(noderoot.getData()+<span class="string">"-r"</span>);</div><div class="line">        &#125;</div><div class="line">       </div><div class="line">      <span class="comment">//  tree.preShow(tree.getRoot());</span></div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/14/nodeTree/" rel="next" title="二叉树">
+                <i class="fa fa-chevron-left"></i> 二叉树
+              </a>
+            
+          </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -551,6 +477,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/17/java_learn/"
+           data-title="JAVA中的Scanner类(IO)[JAVA][译]" data-url="http://yoursite.com/2016/11/17/java_learn/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -570,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/upload/avatar.png"
@@ -621,6 +564,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -739,6 +693,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
