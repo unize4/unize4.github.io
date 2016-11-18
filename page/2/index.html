@@ -279,8 +279,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/14/1114plan/" itemprop="url">
-                  11.14plan
+                <a class="post-title-link" href="/2016/11/10/linux/" itemprop="url">
+                  服务器部署步骤
                 </a>
               
             
@@ -293,8 +293,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-14T09:21:41+08:00" content="2016-11-14">
-              2016-11-14
+            <time itemprop="dateCreated" datetime="2016-11-10T12:41:32+08:00" content="2016-11-10">
+              2016-11-10
             </time>
           </span>
 
@@ -307,8 +307,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/plan/" itemprop="url" rel="index">
-                    <span itemprop="name">plan</span>
+                  <a href="/categories/notes/" itemprop="url" rel="index">
+                    <span itemprop="name">notes</span>
                   </a>
                 </span>
 
@@ -323,8 +323,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/14/1114plan/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/14/1114plan/" itemprop="commentsCount"></span>
+                <a href="/2016/11/10/linux/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/10/linux/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -349,16 +349,22 @@
       
         
           
-            <ul>
-<li>zhaosheng<blockquote>
-<p>测试一下网站的所有中英文切换问题，包括cms的文章链接的管理等。<br>招生申请流程主要界面包括：首页－－》报名申请页（第一步，第二步，预览）－－》报名结果页<br>报名结果页页头修正</p>
-</blockquote>
+            <p>设置密钥免密码登录<br><a href="http://jingyan.baidu.com/article/00a07f38bb594682d028dcc8.html" target="_blank" rel="external">http://jingyan.baidu.com/article/00a07f38bb594682d028dcc8.html</a></p>
+<ul>
+<li>生成war包</li>
+<li><p>解压、删除上传目录，重新打包</p>
 </li>
-<li>charge<blockquote>
-<p>新增充电订单表，属性大概包括，订单编号，创建人，创建时间，结束时间，已充电能，已充价格，充电桩id，汽车，订单状态（0新建，1开始充电，2），最终支付订单价格。<br>新增支付宝订单表，参照花神设置支付流程，大概是手机端创建订单（创建订单接口），后台调取支付宝回调，然后将回调接口返回，手机端根据回调结果创建支付订单，手机端支付，支付完成（支付完成接口），后台将支付结果返回到手机。账户金额增加，支付完成。<br>手机端，支付宝充值，要求可自由输入价格。目前只开通支付宝。<br>手机端，扫码访问网址，网址组成为，m／start？id＝xxxx（充电桩编号）<br>后台创建命令表，命令纪录表，命令内容，订单id，创建时间。<br>创建OrderUtil类，针对命令进行解析<br>后台创建监听，等待连接，连接建立，检查初始状态，没有问题开始充电，更改充电订单状态为1，给充电桩发命令开始充电。充电过程中不断解析，数据，通过OrderUtil.setCharge,然后存到充电表。<br>手机端不断查询当前用户的当前订单状态。需要一个接口，可查到当前用户正在进行中的订单。（大于0）</p>
-</blockquote>
+<li><p>上传WAR包<br>本地脚本</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#bin/bash</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'拷贝war包'</span></div><div class="line">mv /Users/apple/guojiao/zhaosheng/branches/branch-20161024-week3/target/jeesite.war /Users/apple/war_build/</div><div class="line"><span class="built_in">echo</span> <span class="string">'进入目录/Users/app/war_build...'</span></div><div class="line"><span class="built_in">cd</span> /Users/apple/war_build/</div><div class="line"><span class="built_in">echo</span> <span class="string">'解压war包...'</span></div><div class="line">jar -xvf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除war包...'</span></div><div class="line">rm -rf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除lib...'</span></div><div class="line">rm -rf WEB-INF/lib/</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除upload...'</span></div><div class="line">rm -rf static/upload/</div><div class="line"><span class="built_in">echo</span> <span class="string">'打包war包...'</span></div><div class="line">jar -cvf jeesite.war ./</div><div class="line"><span class="built_in">echo</span> <span class="string">'上传war包'</span></div><div class="line">scp /Users/apple/war_build/jeesite.war root@gjlg.yunjuanyunshu.com:/alidata/www/ftpdir/</div><div class="line"><span class="built_in">echo</span> <span class="string">'运行服务器脚本...'</span></div><div class="line">ssh root@gjlg.yunjuanyunshu.com <span class="string">"./auto_deploy_war.sh"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'部署完成'</span></div></pre></td></tr></table></figure>
 </li>
+<li><p>解压WAR包、删除WAR包</p>
+</li>
+<li>清除日志信息</li>
+<li>备份数据库</li>
+<li>重启tomcat</li>
 </ul>
+<p>脚本<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Function:    auto deploy war</span></div><div class="line"><span class="comment">#Usage:       bash auto_deploy_war.sh</span></div><div class="line"><span class="comment">#Author:      unize4</span></div><div class="line"><span class="comment">#Version:     2.0</span></div><div class="line"><span class="comment">#########################################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'拷贝 war包...'</span></div><div class="line">cp /alidata/www/ftpdir/jeesite.war /alidata/www/default</div><div class="line"><span class="built_in">echo</span> <span class="string">'进入目录...'</span></div><div class="line"><span class="built_in">cd</span> /alidata/www/default/</div><div class="line"><span class="built_in">echo</span> <span class="string">'设置变量...'</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div><div class="line"><span class="built_in">echo</span> <span class="string">'解压war...'</span></div><div class="line">jar -xvf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除war包...'</span></div><div class="line">rm -rf jeesite.war</div><div class="line"><span class="built_in">echo</span> <span class="string">'停止tomcat..'</span></div><div class="line">/etc/init.d/tomcat7 stop</div><div class="line"><span class="built_in">echo</span> <span class="string">'删除logs日志...'</span></div><div class="line">rm -rf /alidata/server/tomcat7/logs/catalina.out</div><div class="line">sleep 5</div><div class="line"><span class="built_in">echo</span> <span class="string">'启动tomcat...'</span></div><div class="line">/etc/init.d/tomcat7 start</div><div class="line"><span class="built_in">echo</span> <span class="string">'启动完成...'</span></div></pre></td></tr></table></figure></p>
+<p><em>注意写完脚本需要 chmod 777修改一下脚本权限</em></p>
 
           
         
@@ -408,8 +414,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/14/thinks/" itemprop="url">
-                  关于做计划
+                <a class="post-title-link" href="/2016/11/10/mysql_blocked/" itemprop="url">
+                  mysql：is blocked because of many connection errors
                 </a>
               
             
@@ -422,8 +428,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-14T09:06:56+08:00" content="2016-11-14">
-              2016-11-14
+            <time itemprop="dateCreated" datetime="2016-11-10T12:10:23+08:00" content="2016-11-10">
+              2016-11-10
             </time>
           </span>
 
@@ -436,8 +442,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/think/" itemprop="url" rel="index">
-                    <span itemprop="name">think</span>
+                  <a href="/categories/bugs/" itemprop="url" rel="index">
+                    <span itemprop="name">bugs</span>
                   </a>
                 </span>
 
@@ -452,8 +458,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/14/thinks/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/14/thinks/" itemprop="commentsCount"></span>
+                <a href="/2016/11/10/mysql_blocked/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/10/mysql_blocked/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -478,9 +484,437 @@
       
         
           
-            <p>以前总是懒得做计划，觉得做了也没什么用，总是不去执行。后来发现，是计划做的不够细。<br>模糊的计划，模糊的行动，很容易怠惰起来。但做详细的计划又特别的耗时间。具体到要做什<br>么事，怎么做。比如要改一个bug，就要去想需要做哪些改动，具体到要动哪个实体的属性，<br>具体到要怎么写代码。有时候一天的计划要花半天来理清。但是我觉得依旧很值得。有这种非<br>常清晰的计划，可以专心的去把计划的事情完成。甚至，如果计划写的足够详细，拿去指派给<br>任何一个人都可以接手，而不用过多的解释。这样提高的效率不是一点半点。这种理清计划去<br>办事最后按部就班的完成工作的感觉，十分的愉快充实！</p>
+            <blockquote>
+<p>是由于MYSQL数据库的参数：max_connect_errors（系统默认10）<br>  mysqld已经得到了大量(max_connect_errors)的主机’hostname’的在中途被中断了的连接请求累计超过10次，就再也无法连接上mysqld服务，<br>   直到FLUSH HOSTS 或者重启MySQL服务。</p>
+<ul>
+<li>解决办法：<br>在my.cnf中mysqld节点下加一行</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">max_connect_errors＝ 1000</div></pre></td></tr></table></figure>
+<p>然后登陆mysql执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FLUSH HOSTS;</div></pre></td></tr></table></figure>
+<p>效果图如下：</p>
+<p><img src="/upload/blocked.png" alt="mysql_blocked"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/09/hexo_next/" itemprop="url">
+                  Hexo Next主题界面空白 vendors下资源不加载办法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-09T19:03:22+08:00" content="2016-11-09">
+              2016-11-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/bugs/" itemprop="url" rel="index">
+                    <span itemprop="name">bugs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/09/hexo_next/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/09/hexo_next/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Next作者的回复是</p>
 <blockquote>
-<p>总之，详细的行动步骤是一天工作的保证，也是不把自己搞得手忙脚乱的保证！</p>
+<p>vendors目录被guthub pages屏蔽，将vendors改成其他名字即可，主题配置文件里面也需要改</p>
+</blockquote>
+<p>github官方回复</p>
+<blockquote>
+<p>We recently updated to Jekyll v3.3, which ignores the vendor folder by default.If you’re not using Jekyll, you can add a .nojekyll file to the root of your repository to disable Jekyll from building your site.</p>
+</blockquote>
+<p>麻烦的办法：<br>直接登陆github，在仓库上新建文件.nojekyll但是每次重新执行hexo clean/g/d之后文件会被删除。直接在本地hexo的public或者source目录新建文件总是没办法提交成功。（点开头的文件不提交？）<br>简单的办法：<br>把source文件夹下vendors改成了static。<br>还有主题配置文件_config.yml,vendors的第一项后面vendors改成static。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/09/bug_two/" itemprop="url">
+                  招生系统的一些问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-09T15:45:08+08:00" content="2016-11-09">
+              2016-11-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/bugs/" itemprop="url" rel="index">
+                    <span itemprop="name">bugs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/09/bug_two/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/09/bug_two/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>官网页脚问题（＊）</li>
+</ul>
+<blockquote>
+<p>首页是单独的页面不引用公共的页眉页脚。列表页和文章详情页引用的是公共的页眉页脚。页眉页脚文件为各自主题下的layouts文件夹下的default文件。 </p>
+</blockquote>
+<ul>
+<li>官网中英文遗留问题（＊＊）</li>
+</ul>
+<blockquote>
+<p>中文官网主题文件夹为officialsite，英文官网主题为officialsite_en。英文网站的列表页和详情页应和中文站点相同。</p>
+</blockquote>
+<ul>
+<li>招生登录注册界面（＊）</li>
+</ul>
+<blockquote>
+<p>招生登录界面的页脚版权信息添加</p>
+</blockquote>
+<ul>
+<li>忘记密码？</li>
+</ul>
+<blockquote>
+<p>。。。</p>
+</blockquote>
+<ul>
+<li>申请界面照片选择（＊＊）</li>
+</ul>
+<blockquote>
+<p>照片选择功能完善，加预览。（功能已写好，简单迁移）</p>
+</blockquote>
+<ul>
+<li>表单保存并下一步（＊＊）</li>
+</ul>
+<blockquote>
+<p>表单填完一步要保存的数据库，下次进入还能查看。</p>
+</blockquote>
+<ul>
+<li>表单字典（＊）</li>
+</ul>
+<blockquote>
+<p>宗教信仰、健康状况、学历、HSK登等级，以上为优先确定，其他的自行检查下。</p>
+</blockquote>
+<ul>
+<li>第二步信息填写之后（＊＊＊）</li>
+</ul>
+<blockquote>
+<p>第二步申请的时候不启动流程，需要单独写一个启动流程的接口，在预览界面添加提交的按钮，应该是结果展示列表。</p>
+<ul>
+<li>招生页面英文版（＊＊＊＊）</li>
+</ul>
+<p>切换方式已选定，简单的说就是将原来的申请方式controller复制一遍加上_en,通过request里面的refer属性进行跳转。配置文件要加一个属性为默认的站点状态（中文还是英文），用户未登录的时候打开首页的时候从配置文件里读区设置，注册后记录用户的默认状态，存到数据库中，每次登录打开首页时根据用户上次的状态来确定打开中文还是英文的首页。</p>
+</blockquote>
+<h4 id="所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！"><a href="#所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！" class="headerlink" title="所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！"></a>所有的界面相关的问题先和前端仓库里最新的界面比对，是否一致。不清楚的变动要及时和前端沟通！</h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/30/bug_one/" itemprop="url">
+                  idea properties中内容自动编码问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-30T14:41:26+08:00" content="2016-09-30">
+              2016-09-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/bugs/" itemprop="url" rel="index">
+                    <span itemprop="name">bugs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/30/bug_one/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/bug_one/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>在Preferences - File Encoding，在标红的选项上打上勾，确定即可</p>
 </blockquote>
 
           
@@ -514,7 +948,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -555,7 +989,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
